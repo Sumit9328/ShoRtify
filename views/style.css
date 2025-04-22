@@ -1,0 +1,11 @@
+.gradient-border-box {
+    border-width: 4px;
+    border-style: solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #db00ff, #03c1fe);
+    border-radius: 1rem;
+    padding: 20px;
+    width: 200px;
+    height: auto;
+  }
+  
