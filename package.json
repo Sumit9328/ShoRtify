@@ -8,7 +8,7 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "\"# ShoRtify\"",
   "dependencies": {
     "body-parser": "^2.2.0",
     "btch-downloader": "^3.7.18",
@@ -16,5 +16,17 @@
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0"
-  }
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sumit9328/ShoRtify.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Sumit9328/ShoRtify/issues"
+  },
+  "homepage": "https://github.com/Sumit9328/ShoRtify#readme"
 }

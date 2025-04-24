@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Media Downloader</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,9 +14,18 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script> -->
 
   <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-    }
+    /* 
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    } */
   </style>
 
 
@@ -42,26 +52,27 @@
   </div>
 
   <!-- Body Content -->
-  <div class="flex justify-center items-center mt-10">
-    <div class="w-full max-w-xl bg-white/10 p-8 rounded-xl shadow-lg backdrop-blur-md border-2 border-purple-300">
+  <div class="flex justify-center items-center mt-10 sm:px-4 px-4">
+    <div
+      class="w-full sm:max-w-xl bg-white/10 p-6 sm:p-8 rounded-xl shadow-lg backdrop-blur-md border-2 border-purple-300">
 
       <!-- Instagram Reels Form -->
       <form id="reelSection" action="/download" method="POST" class="space-y-4">
-        <h2 class="text-[35px] font-[600] mb-2 text-center text-[#2a3d7f]">Download Instagram Reel</h2>
+        <h2 class="text-2xl sm:text-[35px] font-semibold mb-2 text-center text-[#2a3d7f]">Download Instagram Reel</h2>
         <input type="text" name="url" placeholder="Paste Instagram Reel URL" required
-          class="w-full px-4 py-2 rounded-md bg-white/10 text-[#2a3d7f] placeholder-black/70 border border-black/20 focus:outline-none focus:ring-2 focus:ring-black/30" />
+          class="w-full px-4 py-2 rounded-md bg-white/10 text-[#2a3d7f] placeholder-black/70 border border-black/20 focus:outline-none focus:ring-2 focus:ring-black/30 text-base sm:text-lg" />
         <button type="submit"
-          class="w-full py-2 rounded-md border border-pink-500 hover:bg-pink-500 transition text-pink-500 hover:text-white text-[20px] font-[400]">Download
+          class="w-full py-2 rounded-md border border-pink-500 hover:bg-pink-500 transition text-pink-500 hover:text-white text-lg font-medium">Download
           Reel</button>
       </form>
 
       <!-- YouTube Shorts Form -->
       <form id="ytSection" action="/download" method="POST" class="space-y-4 hidden">
-        <h2 class="text-[35px] font-[600] mb-2 text-center text-[#2a3d7f]">Download YouTube Shorts</h2>
+        <h2 class="text-2xl sm:text-[35px] font-semibold mb-2 text-center text-[#2a3d7f]">Download YouTube Shorts</h2>
         <input type="text" name="url" placeholder="Paste YT Shorts URL" required
-          class="w-full px-4 py-2 rounded-md bg-white/10 text-[#2a3d7f] placeholder-black/70 border border-black/20 focus:outline-none focus:ring-1 focus:ring-black/30" />
+          class="w-full px-4 py-2 rounded-md bg-white/10 text-[#2a3d7f] placeholder-black/70 border border-black/20 focus:outline-none focus:ring-2 focus:ring-black/30 text-base sm:text-lg" />
         <button type="submit"
-          class="w-full py-2 rounded-md border border-[#ff0000] hover:bg-[#ff0000] transition text-[#ff0000] hover:text-white text-[20px] font-[400]">Download
+          class="w-full py-2 rounded-md border border-[#ff0000] hover:bg-[#ff0000] transition text-[#ff0000] hover:text-white text-lg font-medium">Download
           Shorts</button>
       </form>
 
@@ -84,49 +95,59 @@
 
 
 
-  <!-- Instructions Box -->
-  <section class="overflow-hidden pt-20">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12 px-24">
 
-          <div class="col-md-10 bg-[#5940f1] px-20 py-12 rounded-2xl text-white shadow-lg border border-black/20">
-            <h2 class="text-[50px] font-semibold mb-4 text-center leading-[65px] px-14">How to download from Instagram?
-            </h2>
-            <ol class=" list-inside space-y-4">
-              <li class="text-[20px] py-3"><strong class="text-[22px]">1. Copy the URL :</strong> Open the Instagram app
-                or website, go to the photo, video, reels, carousel, or IGTV you want to download. Copy the URL.</li>
-              <li class="text-[20px] py-3"><strong class="text-[22px]">2. Paste the link :</strong> Return to the
-                SSSInstagram website, paste the link into the input field at the top of the page, and click the
-                "Download" button to start downloading.</li>
-              <li class="text-[20px] py-3"><strong class="text-[22px]">3. Download :</strong> Review the results and
-                find the file you want to download. Click the "Download" button. Ready! The file is saved to your
-                device.</li>
-            </ol>
-          </div>
-        </div>
+  <!-- Instructions Box -->
+  <section class="overflow-hidden pt-20 px-4 sm:px-6 lg:px-24">
+    <div class="max-w-7xl mx-auto">
+      <div class="bg-[#5940f1] sm:px-20 px-4 py-12 rounded-2xl text-white shadow-lg border border-black/20">
+        <h2 class="text-[30px] sm:text-[50px] md:text-5xl font-semibold mb-4 text-center leading-snug sm:px-14">
+          How to download from Instagram?
+        </h2>
+        <ol class="list-inside space-y-4">
+          <li class="sm:text-[25px] text-[20px] py-3">
+            <strong class="text-[24px] sm:text-[30px]">1. Copy the URL :</strong>
+            Open the Instagram app or website, go to the photo, video, reels, carousel, or IGTV you want to download.
+            Copy the URL.
+          </li>
+          <li class="sm:text-[25px] text-[20px] py-3">
+            <strong class="text-[24px] sm:text-[30px]">2. Paste the link :</strong>
+            Return to the SSSInstagram website, paste the link into the input field at the top of the page, and click
+            the "Download" button to start downloading.
+          </li>
+          <li class="sm:text-[25px] text-[20px] py-3">
+            <strong class="text-[24px] sm:text-[30px]">3. Download :</strong>
+            Review the results and find the file you want to download. Click the "Download" button. Ready! The file is
+            saved to your device.
+          </li>
+        </ol>
       </div>
     </div>
   </section>
 
 
-  <section class="overflow-hidden py-20">
+
+  <section class="overflow-hidden py-20 hidden sm:block">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-12 px-14">
-          <div class="col-md-10 px-4">
+        <div class="col-md-12 sm:px-14">
+          <div class="col-md-10 sm:px-4">
             <div class="space-y-10">
               <!-- Feature 1 -->
               <div class="flex flex-col md:flex-row items-center gap-6 px-14">
-                <img src="../assets/images/11186803.gif" alt="" class="w-[180px] h-[180px] object-cover rounded-2xl" />
+                <!-- Image Section -->
+                <img src="../assets/images/11186803.gif" alt=""
+                  class="w-[180px] h-[180px] object-cover rounded-2xl mb-4 md:mb-0" />
+
+                <!-- Text Section -->
                 <div>
-                  <h3 class="text-[35px] font-[600] text-[#2a3d7f] mb-2">Unlimited download</h3>
-                  <p class="text-[20px] font-[400] text-gray-700">
+                  <h3 class="text-[28px] md:text-[35px] font-[600] text-[#2a3d7f] mb-2">Unlimited download</h3>
+                  <p class="text-[18px] md:text-[20px] font-[400] text-gray-700">
                     Watch and download photos, videos, reels, IGTV, Highlights in original resolution and quality
                     without restrictions! Download as many videos and photos as you want every day.
                   </p>
                 </div>
               </div>
+
 
               <!-- Feature 2 -->
               <div class="flex flex-col md:flex-row items-center gap-6 px-14 pb-4">
@@ -139,7 +160,8 @@
                     video to your device. Our website is very simple to use.
                   </p>
                 </div>
-                <img src="../assets/images/Youtube (1).gif" alt="anonymous icon" class="w-[180px] h-[180px]">
+                <img src="../assets/images/Youtube (1).gif" alt="anonymous icon"
+                  class="w-[180px] h-[180px] sm:order-0 order-1">
               </div>
 
               <!-- Feature 3 -->
@@ -163,68 +185,103 @@
     </div>
   </section>
 
-
+  <section class="overflow-hidden sm:hidden block py-20 px-8 sm:px-6 lg:px-20">
+    <div class="max-w-7xl mx-auto space-y-14"> <!-- Feature 1 -->
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <div class="order-1 md:order-none w-full md:w-auto"> <img src="../assets/images/11186803.gif" alt=""
+            class="w-full md:w-[180px] h-auto object-cover rounded-2xl" /> </div>
+        <div>
+          <h3 class="sm:text-[35px] text-[35px] md:text-[35px] font-semibold text-[#2a3d7f] mb-2">Unlimited download</h3>
+          <p class=" sm:text-[28px] text-[22px] md:text-lg text-gray-700"> Watch and download photos, videos, reels, IGTV, Highlights in
+            original resolution and quality without restrictions! Download as many videos and photos as you want every
+            day. </p>
+        </div>
+      </div> <!-- Feature 2 -->
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <div class="order-1 md:order-none w-full md:w-auto"> <img src="../assets/images/Youtube (1).gif"
+            alt="YouTube GIF" class="w-full md:w-[180px] h-auto object-cover rounded-2xl" /> </div>
+        <div>
+          <h3 class="text-[35px] md:text-[35px] font-semibold text-[#2a3d7f] mb-2">YouTube Shorts Download</h3>
+          <p class="sm:text-[28px] text-[22px] md:text-lg text-gray-700"> Downloading YouTube shorts video directly from YouTube is not
+            possible. Our website is a free online tool that allows users to quickly download short videos from YouTube.
+          </p>
+        </div>
+      </div> <!-- Feature 3 -->
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <div class="order-1 md:order-none w-full md:w-auto"> <img src="../assets/images/giphy (1).gif"
+            alt="Instagram GIF" class="w-full md:w-[180px] h-auto object-cover rounded-2xl" /> </div>
+        <div>
+          <h3 class="text-[35px] md:text-[35px] font-semibold text-[#2a3d7f] mb-2">Instagram Shorts Download</h3>
+          <p class="sm:text-[28px] text-[22px] md:text-lg text-gray-700"> Save your favorite Instagram Reels quickly and easily with our
+            Reels Downloader. Just copy the URL, paste, and download. </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
   <section class="overflow-hidden pt-5">
     <div class="container-fluid">
       <div class="row">
-
-        <div class="col-md-12 px-24">
+        <div class="col-md-12 px-4 md:px-24">
           <!-- Outer wrapper for gradient border -->
-          <div class="p-[2px] rounded-[18px]  bg-gradient-to-r from-[#db00ff] to-[#03c1fe]">
-
+          <div class="p-[2px] rounded-[18px] bg-gradient-to-r from-[#db00ff] to-[#03c1fe]">
+            
             <!-- Inner content with white background -->
-            <div class="bg-white p-8 md:p-12 rounded-[1rem]">
-              <h2 class="text-4xl md:text-5xl font-bold text-center text-[#2a3d7f] mb-10">Why SSSInstagram?</h2>
-
-              <div class="space-y-10">
+            <div class="bg-white p-6 md:p-12 rounded-[1rem]">
+              <h2 class="text-[32px] md:text-5xl font-bold text-center text-[#2a3d7f] mb-10">Why SSSInstagram?</h2>
+  
+              <div class="space-y-12">
+                
                 <!-- Feature 1 -->
-                <div class="flex flex-col md:flex-row items-center gap-6 px-14">
-                  <img src="../assets/images/unlimited.svg" alt=""
-                    class="w-[140px] h-[140px] object-cover rounded-2xl" />
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                  <img src="../assets/images/unlimited.svg" alt="Unlimited"
+                    class="w-[200px] md:w-[140px] h-auto object-contain rounded-2xl" />
                   <div>
-                    <h3 class="text-[35px] font-[600] text-[#2a3d7f] mb-2">Unlimited download</h3>
-                    <p class="text-[20px] font-[400] text-gray-700">
+                    <h3 class="text-[28px] md:text-[35px] font-[600] text-[#2a3d7f] mb-2">Unlimited download</h3>
+                    <p class="text-[19px] md:text-[20px] font-[400] text-gray-700">
                       Watch and download photos, videos, reels, IGTV, Highlights in original resolution and quality
                       without restrictions! Download as many videos and photos as you want every day.
                     </p>
                   </div>
                 </div>
-
+  
                 <!-- Feature 2 -->
-                <div class="flex flex-col md:flex-row items-center gap-6 px-14">
+                <div class="flex flex-col-reverse md:flex-row items-center gap-6">
                   <div>
-                    <h3 class="text-[35px] font-[600] text-[#2a3d7f] mb-2">100% Anonymous</h3>
-                    <p class="text-[20px] font-[400] text-gray-700">
+                    <h3 class="text-[28px] md:text-[35px] font-[600] text-[#2a3d7f] mb-2">100% Anonymous</h3>
+                    <p class="text-[19px] md:text-[20px] font-[400] text-gray-700">
                       Stay completely anonymous when browsing and downloading from Instagram! Our service allows you to
                       do this without taking any data from your Instagram accounts.
                     </p>
                   </div>
-                  <img src="../assets/images/anonymous.svg" alt="anonymous icon" class="w-[140px] h-[140px]">
+                  <img src="../assets/images/anonymous.svg" alt="Anonymous icon"
+                    class="w-[200px] md:w-[140px] h-auto object-contain rounded-2xl" />
                 </div>
-
+  
                 <!-- Feature 3 -->
-                <div class="flex flex-col md:flex-row items-center gap-6 px-14">
-                  <img src="../assets/images/fast.svg" alt="fast icon" class="w-[140px] h-[140px]">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                  <img src="../assets/images/fast.svg" alt="Fast icon"
+                    class="w-[200px] md:w-[140px] h-auto object-contain rounded-2xl" />
                   <div>
-                    <h3 class="text-[35px] font-[600] text-[#2a3d7f] mb-2">Fast, safe & completely free</h3>
-                    <p class="text-[20px] font-[400] text-gray-700">
+                    <h3 class="text-[28px] md:text-[35px] font-[600] text-[#2a3d7f] mb-2">Fast, safe & completely free</h3>
+                    <p class="text-[19px] md:text-[20px] font-[400] text-gray-700">
                       SSSInstagram works in any web browser (Chrome, Firefox, Opera) and on any device (computer,
                       tablet, Android, and iOS phones). Our service is fully automated and free.
                     </p>
                   </div>
                 </div>
+  
               </div>
             </div>
           </div>
-
-
+          
         </div>
       </div>
     </div>
   </section>
+  
 
 
 
@@ -235,9 +292,10 @@
       <div class="row">
         <div class="col-md-12 px-4 flex justify-center items-center">
           <div class="col-md-10">
-            <div class="border border-purple-400 rounded-md py-2 mb-4">
+            <div class="border-2 border-purple-400 rounded-md py-2 mb-4">
               <button onclick="toggleAccordion(0)"
-                class="w-full flex justify-between items-center p-4 text-left text-lg font-medium bg-white transition">
+                class="w-full flex justify-between items-center p-4 text-left text-lg font-medium transition">
+                <!-- class="w-full flex justify-between items-center p-4 text-left text-lg font-medium bg-white transition"> -->
                 <span>Is there a limit to how many Instagram photos and videos I can download?</span>
                 <span class="transform transition-transform duration-300" id="icon-0">▼</span>
               </button>
@@ -246,9 +304,9 @@
               </div>
             </div>
 
-            <div class="border border-purple-400 rounded-md py-2 mb-4">
+            <div class="border-2 border-purple-400 rounded-md py-2 mb-4">
               <button onclick="toggleAccordion(1)"
-                class="w-full flex justify-between items-center p-4 text-left text-lg font-medium bg-white transition">
+                class="w-full flex justify-between items-center p-4 text-left text-lg font-medium transition">
                 <span>What is an Instagram video downloader?</span>
                 <span class="transform transition-transform duration-300" id="icon-1">▼</span>
               </button>
@@ -257,9 +315,9 @@
               </div>
             </div>
 
-            <div class="border border-purple-400 rounded-md py-2 mb-4">
+            <div class="border-2 border-purple-400 rounded-md py-2 mb-4">
               <button onclick="toggleAccordion(2)"
-                class="w-full flex justify-between items-center p-4 text-left text-lg font-medium bg-white transition">
+                class="w-full flex justify-between items-center p-4 text-left text-lg font-medium transition">
                 <span>Can I download Instagram Stories using this tool?</span>
                 <span class="transform transition-transform duration-300" id="icon-2">▼</span>
               </button>
@@ -268,9 +326,9 @@
               </div>
             </div>
 
-            <div class="border border-purple-400 rounded-md py-2">
+            <div class="border-2 border-purple-400 rounded-md py-2">
               <button onclick="toggleAccordion(3)"
-                class="w-full flex justify-between items-center p-4 text-left text-lg font-medium bg-white transition">
+                class="w-full flex justify-between items-center p-4 text-left text-lg font-medium transition">
                 <span>Do I need to install any software to use the Instagram downloader?</span>
                 <span class="transform transition-transform duration-300" id="icon-3">▼</span>
               </button>
