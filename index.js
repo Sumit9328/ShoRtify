@@ -26,6 +26,18 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/about', (req, res) => {
+  res.render('about');
+});
+
+app.get('/privacy', (req, res) => {
+  res.render('privacy');
+});
+
+app.get('/contact', (req, res) => {
+  res.render('contact');
+});
+
 // POST route for downloading media
 app.post('/download', async (req, res) => {
   const url = req.body.url;
